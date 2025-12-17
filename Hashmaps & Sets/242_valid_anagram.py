@@ -15,8 +15,10 @@ class Solution:
                 return False
 
         return True
-        
-       
+    
+#Instead of manuaaly checking the similarity of the 2 dictionaries, we can do that simply as follows
+# return d1 == d2
+               
 
 #In the leecode code editor you dont need to write the following code . It is just to run in your local machine.
 
