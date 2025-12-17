@@ -14,6 +14,7 @@ class Solution:
         return p == len(s)
 
 
+#In the leecode code editor you dont need to write the following code . It is just to run in your local machine.
 if __name__ == "__main__":
     s = input()
     t = input()
