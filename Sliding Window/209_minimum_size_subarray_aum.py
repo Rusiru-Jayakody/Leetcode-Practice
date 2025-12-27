@@ -1,3 +1,5 @@
+#This soluiton works only when all the elements in the array are postive integers.If not we have to use prefix sums approach.
+
 class Solution:
     def minSubArrayLen(self, target: int, nums) -> int:
         shortest = float('inf')
