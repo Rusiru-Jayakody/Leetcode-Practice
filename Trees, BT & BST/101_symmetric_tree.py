@@ -1,37 +1,40 @@
+
 class Solution:
-    def isSameTree(self,p,q):
-        if not p and not q:
-            return True
-        if not p or not q:
-            return False
-        if p.val != q.val:
-            return False
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right,q.right)
-    
+    def isSymmetric(self, root) -> bool:
+        def dfs(p,q):
+            if not p and not q:
+                return True
+            if not p or not q:
+                return False
+            if p.val != q.val:
+                return False
+            return dfs(p.left, q.right) and dfs(p.right, q.left)
+        return dfs(root.left, root.right)
+
 #This is an alternative soluiton using a deque. We can implement the same using a stack as well
+
 # class Solution:
-#     def isSameTree(self,p,q):
-#         d = deque([(p,q)])
-
+#     def isSymmetric(self, root) -> bool:
+#         d = deque([(root.left,root.right)])
 #         while d:
-#             m,n = q.popleft()
-#             if not m and not n:
+#             p,q = d.popleft()
+#             if not p and not q:
 #                 continue
-#             if not m or not n:
+#             if not p or not q:
 #                 return False
-#             if m.val != n.val:
+#             if p.val != q.val:
 #                 return False
-#             d.append((m.left, n.left))
-#             d.append((m.right,n.right))
+#             d.append((p.left, q.right))
+#             d.append((p.right, q.left))
 #         return True
-
-
+    
 
 #In the leetcode code editor you dont need to write the following code . It is just to run in your local machine.
 
-# Definition for a binary tree node.
+    
+#Definition for a binary tree node
 class TreeNode:
-    def __init__(self, val = 0, left =None, right = None):
+    def __init__(self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
@@ -50,7 +53,7 @@ def buildTree(values):
     while q and i < len(values):
         node = q.popleft()
 
-        #left child
+        #leftchild
         if values[i] != "null":
             node.left = TreeNode(int(values[i]))
             q.append(node.left)
@@ -66,19 +69,13 @@ def buildTree(values):
     return root
 
 
-
-
-#-----------------MAIN-------------------------
+#------------------MAIN-------------------------
 if __name__ == "__main__":
     sol = Solution()
     print("Enter tree nodes in level order (use 'null' for empty nodes):")
     # Example: 1 2 3 4 5 null null
-    values1 = input().split()
-    p = buildTree(values1)
-    print("Enter tree nodes in level order (use 'null' for empty nodes):")
-    # Example: 1 2 3 4 5 null null
-    values2 = input().split()
-    q = buildTree(values2)
-    ans = sol.isSameTree(p,q)
+    values = input().split()
+    root = buildTree(values)
+    ans = sol.isSymmetric(root)
     print(ans)
-    
+        
