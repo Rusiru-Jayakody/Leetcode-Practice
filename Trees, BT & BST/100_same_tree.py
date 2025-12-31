@@ -10,7 +10,7 @@ class Solution:
     
 #This is an alternative soluiton using a deque. We can implement the same using a stack as well
 # class Solution:
-#     def isSameTree(self,p,q):
+#     def isSameTree(self, p, q):
 #         d = deque([(p,q)])
 
 #         while d:
