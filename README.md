@@ -4,3 +4,8 @@ Below are the topics which I have practiced upto now.
 
 1) Arrays & Strings
 2) Hashmaps & Sets
+3) Stacks & Queues
+4) 2 Pointers
+5) Sliding Window
+6) Binary Search
+7) Trees, Binary trees & Binary search trees
