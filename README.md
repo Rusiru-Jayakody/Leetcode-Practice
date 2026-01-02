@@ -9,3 +9,4 @@ Below are the topics which I have practiced upto now.
 5) Sliding Window
 6) Binary Search
 7) Trees, Binary trees & Binary search trees
+8) Heaps (Priority queues)
