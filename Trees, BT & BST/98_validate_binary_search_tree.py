@@ -34,6 +34,35 @@ class Solution:
 #         return validate
 
 
+# This is an alternative solution using min/max bound using iterative dfs..
+
+# class Solution:
+#     def isValidBST(self, root) -> bool:
+#         if not root:
+#             return True
+#         stk = [(root, float('-inf'), float('inf'))]
+#         while stk:
+#             node, minn, maxx = stk.pop()
+#             if node.val <= minn or node.val >= maxx:
+#                 return False
+#             if node.left:stk.append((node.left, minn, node.val))
+#             if node.right:stk.append((node.right, node.val, maxx))
+#         return True
+    
+# This is an alternative solution using min/max bound using recursion.
+
+# class Solution:
+#     def isValidBST(self, root) -> bool:
+#         def dfs(root, minn, maxx):
+#             if not root:
+#                 return True
+#             if root.val <= minn or root.val >= maxx:
+#                 return False
+            
+#             return dfs(root.left, minn, root.val) and dfs(root.right, root.val, maxx)
+#         return dfs(root, float('-inf'), float('inf'))
+
+
 
 #In the leetcode code editor you dont need to write the following code . It is just to run in your local machine.
 
