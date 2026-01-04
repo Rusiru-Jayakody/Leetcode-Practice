@@ -13,3 +13,4 @@ Below are the topics which I have practiced upto now.
 9) Recursive Backtracking
 10) Graphs
 11) Dynamic Programming
+12) Bit Manipulation
