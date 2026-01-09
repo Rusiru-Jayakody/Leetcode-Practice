@@ -52,18 +52,24 @@ def create_original_graph(root, edges):
 #Return the edgelist
 def return_edgelist(g):
     edges = []
-    seen = set()
+    visited_nodes = set()
+    seen_edges = set()
     stk = [g]
+    visited_nodes.add(g)
+
     while stk:
-        node = stk.pop() 
+        node = stk.pop()
         for nei in node.neighbors:
             edge = (node.val, nei.val)
             rev_edge = (nei.val, node.val)
-            if rev_edge not in seen:
+            if rev_edge not in seen_edges:
                 edges.append(f"({node.val} <--> {nei.val})")
-                seen.add(edge)
+                seen_edges.add(edge)
+            if nei not in visited_nodes:
+                visited_nodes.add(nei)
                 stk.append(nei)
     return edges
+
 
         
 if __name__ == "__main__":
