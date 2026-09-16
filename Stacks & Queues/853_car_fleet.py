@@ -1,5 +1,5 @@
 class Solution:
-    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+    def carFleet(self, target: int, position, speed) -> int:
         temp = []
         for i in range(len(position)):
             temp.append([position[i],speed[i]])
